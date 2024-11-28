@@ -2,10 +2,10 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import * as userApi from '../services/user';
 
 const initialState = {
-  username: 'test',
-  profilePicture: 'test',
+  username: '',
+  profilePicture: '',
   googleName: null,
-  authenticated: true,
+  authenticated: false,
   status: 'idle',
 };
 

@@ -165,14 +165,9 @@ function Register() {
                   {errors.confirmPassword && errors.confirmPassword.message}
                 </FormErrorMessage>
               </FormControl>
-              <Button
-                isLoading={isSubmitting}
-                type='submit'
-                colorScheme='twitter'
-                size='lg'
-                fontSize='md'>
-                Sign up
-              </Button>
+              <Link color='#1DA1F1' as={ReactLink} to='/learningarea'>
+              Log in
+            </Link>
             </Stack>
           </form>
           <Text mt='3' align='center' maxW='md'>

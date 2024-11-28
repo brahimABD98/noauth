@@ -42,17 +42,17 @@ function App() {
             <Route
               path='/register'
               exact
-              component={withAuthorization(Register, NON_LOGGED_ONLY)}
+              component={withAuthorization(Register, PUBLIC_PAGE)}
             />
             <Route
               path='/login'
               exact
-              component={withAuthorization(Login, NON_LOGGED_ONLY)}
+              component={withAuthorization(Login, PUBLIC_PAGE)}
             />
             <Route
               path='/learningarea'
               exact
-              component={withAuthorization(LearningArea, LOGGED_IN_ONLY)}
+              component={withAuthorization(LearningArea, PUBLIC_PAGE)}
             />
             <Route
               path='/'

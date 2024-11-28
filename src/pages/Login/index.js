@@ -21,7 +21,7 @@ import {
   Divider,
 } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet-async';
-import { Link as ReactLink } from 'react-router-dom';
+import { Link as ReactLink, use } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import LoginWithGoogle from '../../components/LoginWithGoogle';
 
@@ -45,20 +45,7 @@ function Login() {
 
   const dispatch = useDispatch();
   const toast = useToast();
-  const onSubmit = data =>
-    dispatch(login(data)).then(res => {
-      if (res.type === 'user/login/rejected') {
-        toast({
-          title: 'Login error',
-          description: res?.error?.message ?? 'Please try again.',
-          status: 'error',
-          variant: 'subtle',
-          duration: 4000,
-        });
-      } else if (res.type === 'user/login/fulfilled') {
-        window.location.reload();
-      }
-    });
+  const onSubmit = data => { }
 
   return (
     <>
@@ -105,14 +92,9 @@ function Login() {
                   {errors.password && errors.password.message}
                 </FormErrorMessage>
               </FormControl>
-              <Button
-                isLoading={isSubmitting}
-                type='submit'
-                colorScheme='twitter'
-                size='lg'
-                fontSize='md'>
-                Log in
-              </Button>
+              <Link color='#1DA1F1' as={ReactLink} to='/learningarea'>
+                Sign up
+              </Link>
             </Stack>
           </form>
           <Text mt='3' align='center' maxW='md'>
